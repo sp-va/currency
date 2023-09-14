@@ -14,8 +14,8 @@ class RatesAPIView(APIView):
             value = serializer.validated_data['value']
 
             result = float(get_currency(from_currency=from_currency, to_currency=to_currency))
-            result = result * float(value)
+            final = result * float(value)
 
-            return Response(result)
+            return Response(final)
 
 
